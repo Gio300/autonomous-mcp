@@ -1,0 +1,30 @@
+{
+  "name": "autonomous-mcp",
+  "version": "0.1.0",
+  "description": "MCP server: shell execution and desktop orchestration for Cursor and compatible clients",
+  "type": "module",
+  "main": "src/server.mjs",
+  "bin": {
+    "autonomous-mcp": "src/server.mjs"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "inspect": "npx @modelcontextprotocol/inspector node src/server.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "cursor",
+    "shell",
+    "automation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "3.25.76"
+  }
+}

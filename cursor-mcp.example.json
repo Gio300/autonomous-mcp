@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "autonomous-mcp": {
+      "command": "node",
+      "args": ["REPLACE_WITH_ABSOLUTE_PATH/Autonomous MCP/src/server.mjs"]
+    }
+  }
+}

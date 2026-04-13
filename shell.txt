@@ -1,0 +1,19 @@
+Autonomous MCP — what this layer is for
+=========================================
+
+This project is an MCP (Model Context Protocol) server that gives a capable coding agent—starting with Cursor—the same kind of “full machine + shell” leverage a human operator has, but driven from one conversation.
+
+**Orchestration, not a second chatbot.**  
+The model in Cursor already reasons, plans, and edits code. Autonomous MCP adds **durable execution surfaces**: a shell that can run installers, git, package managers, local servers, and OS-level helpers, so the agent can finish long chains (onboarding wizards, multi-step CLI flows, smoke tests) without you retyping every command.
+
+**Why “admin terminal” is phrased carefully.**  
+On Windows, *true* Administrator privileges still require elevation (UAC) or running the host as admin. This MCP runs **with whatever privileges the Cursor (or MCP host) process already has**. In practice that is often enough for day-to-day dev: repo setup, builds, opening URLs, launching `cursor` / `code`, driving local tooling. When something genuinely needs an elevated shell, the README tells you how to align the host with that expectation safely.
+
+**One chatbox, two worlds.**  
+The same thread can mix **local** work (your PC) with guidance for **remote** agents (cloud CI, hosted sandboxes) because the agent sees tool results in one place. You stay the approver for risky operations; the MCP is the bridge that reduces context switching and “click fatigue.”
+
+**Cursor first.**  
+Configuration and examples target Cursor’s MCP settings today. The protocol is standard; other clients can adopt the same server later.
+
+**End goal.**  
+Fewer manual hops between Settings, Terminal, browser, and Git—more “describe the outcome, let the agent run the steps and paste diffs,” with you watching and steering when it matters.
