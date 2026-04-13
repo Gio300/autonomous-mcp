@@ -54,7 +54,8 @@ On Windows, escape spaces in paths or move the clone to a path **without spaces*
 
 ## GitHub
 
-Public source: **`Gio300/autonomous-mcp`** (after you push from this folder). Clone and point `args` at your local `server.mjs`.
+Public repo: **[github.com/Gio300/autonomous-mcp](https://github.com/Gio300/autonomous-mcp)**  
+Clone it, run `npm install`, then point Cursor’s `args` at **your** clone of `src/server.mjs`.
 
 ## Cursor Marketplace / directory
 
