@@ -1,15 +1,32 @@
 {
-  "name": "autonomous-mcp",
-  "version": "0.1.0",
-  "description": "MCP server: shell execution and desktop orchestration for Cursor and compatible clients",
+  "name": "aos-mcp",
+  "version": "0.2.0",
+  "description": "aos-mcp (AOS MCP): unified stdio MCP — PC shell/desktop tools plus optional Perplexity Comet browser tools",
   "type": "module",
-  "main": "src/server.mjs",
+  "main": "src/aos-gateway.mjs",
   "bin": {
-    "autonomous-mcp": "src/server.mjs"
+    "aos-mcp": "src/aos-gateway.mjs",
+    "autonomous-mcp": "src/aos-gateway.mjs"
   },
+  "files": [
+    "src",
+    "scripts",
+    "shell.txt",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gio300/autonomous-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Gio300/autonomous-mcp/issues"
+  },
+  "homepage": "https://github.com/Gio300/autonomous-mcp#readme",
   "scripts": {
-    "start": "node src/server.mjs",
-    "inspect": "npx @modelcontextprotocol/inspector node src/server.mjs"
+    "start": "node src/aos-gateway.mjs",
+    "test": "node scripts/smoke-mcp.mjs",
+    "inspect": "npx @modelcontextprotocol/inspector node src/aos-gateway.mjs"
   },
   "keywords": [
     "mcp",

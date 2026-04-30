@@ -1,10 +1,10 @@
-Autonomous MCP — what this layer is for
+aos-mcp (AOS MCP) — what this layer is for
 =========================================
 
 This project is an MCP (Model Context Protocol) server that gives a capable coding agent—starting with Cursor—the same kind of “full machine + shell” leverage a human operator has, but driven from one conversation.
 
 **Orchestration, not a second chatbot.**  
-The model in Cursor already reasons, plans, and edits code. Autonomous MCP adds **durable execution surfaces**: a shell that can run installers, git, package managers, local servers, and OS-level helpers, so the agent can finish long chains (onboarding wizards, multi-step CLI flows, smoke tests) without you retyping every command.
+The model in Cursor already reasons, plans, and edits code. aos-mcp adds **durable execution surfaces**: a shell that can run installers, git, package managers, local servers, and OS-level helpers, so the agent can finish long chains (onboarding wizards, multi-step CLI flows, smoke tests) without you retyping every command.
 
 **Why “admin terminal” is phrased carefully.**  
 On Windows, *true* Administrator privileges still require elevation (UAC) or running the host as admin. This MCP runs **with whatever privileges the Cursor (or MCP host) process already has**. In practice that is often enough for day-to-day dev: repo setup, builds, opening URLs, launching `cursor` / `code`, driving local tooling. When something genuinely needs an elevated shell, the README tells you how to align the host with that expectation safely.
@@ -17,3 +17,6 @@ Configuration and examples target Cursor’s MCP settings today. The protocol is
 
 **End goal.**  
 Fewer manual hops between Settings, Terminal, browser, and Git—more “describe the outcome, let the agent run the steps and paste diffs,” with you watching and steering when it matters.
+
+**For coding agents (Cursor and similar).**  
+When a step can be done with this MCP’s tools (shell, open URL, open in Cursor), **do that** instead of instructing the user to do it by hand. Plan on **executing via tools** and on the user **approving** tool use in the host when the product asks. Only fall back to “you should manually…” when automation is impossible or inappropriate.
